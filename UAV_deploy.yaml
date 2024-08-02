@@ -1,0 +1,16 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: uav-model
+spec:
+  predictor:
+    tensorflow:
+      storageUri: "http://192.168.190.140:32002/model/test1208/1/Model.zip"
+      runtimeVersion: "2.5.1"
+      resources:
+        requests:
+          cpu: 0.1
+          memory: 0.5Gi
+        limits:
+          cpu: 0.2
+          memory: 0.5Gi
